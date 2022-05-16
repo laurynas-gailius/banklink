@@ -1,7 +1,7 @@
 let ul = document.querySelector("ul");
 let listItems = ul.getElementsByTagName("li");
 
-const selectedItem = ["selected", "text-black", "font-medium", "text-sm", "bg-red-500", "py-1.5", "rounded-full", "px-3.5", "hover:cursor-auto"];
+const selectedItem = ["selected", "text-black", "font-medium", "text-sm", "bg-gray-200", "py-1.5", "rounded-full", "px-3.5", "hover:cursor-auto"];
 const defaultItem = ["text-gray-500", "font-medium", "text-sm", "bg-white", "py-1.5", "rounded-full", "hover:text-black", "cursor-pointer"];
 
 function loginMethods(){

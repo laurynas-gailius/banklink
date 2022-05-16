@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Pay via Bank</title>
+</head>
+<body class="font-manrop" onload="loginMethods()">
+    <!-- Navbar -->
+    <nav class="p-6 bg-white">
+        <!-- Flex container -->
+        <div class="flex items-center justify-between max-w-screen-xl mx-auto">
+            <!-- Exit -->
+                <a class="font-semibold text-base" href="#">Exit</a>
+            <!-- Logo -->
+                <img src="img/AirBaltic_logo.svg" class="h-5" alt="">
+            <!-- Change language -->
+                <img src="img/flag.svg" class="h-6" alt="">
+        </div>
+    </nav>
+    <!-- Content -->
+    <section id="hero">
+       <div class="flex flex-col fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] w-100 px-5 py-5  bg-white rounded-3xl">
+
+           <!-- Header -->
+           <div class="flex flex-row justify-between">
+               <div class="flex flex-row">
+                <img src="img/lock_icon.svg" class="h-5 mt-0.5 pr-2" alt="">
+                <H1 id="demo" class="text-lg font-medium">Login to pay</H1>
+               </div>
+               <img src="img/SEB.svg" class="h-6" alt="">
+           </div>
+
+           <!-- Login methods -->
+            <div>
+                <ul class="flex flex-row gap-4 pb-4 pt-5 justify-center">
+                    <li class="selected">Smart-ID</li>
+                    <li>M-signature</li>
+                    <li>Other methods</li>
+                </ul>
+           </div>
+
+           <!-- Inputs -->
+           <div class="flex flex-col gap-2">
+               <input type="text" class="border-gray-300 border rounded-lg px-4 py-4 focus:outline-none focus:border-primary" placeholder="User ID">
+               <input type="text" class="border-gray-300 border rounded-lg px-4 py-4 focus:outline-none focus:border-primary" placeholder="Personal code">
+           </div>
+
+           <!-- Button -->
+           <div class="flex flex-col gap-5 pt-4">
+                <p class="text-gray-500 text-xs text-center">By proceeding you consent that your account number will be forwarded to Klix to initiate the payment.</p>
+                <button class="btn text-white rounded-full bg-primary py-4 font-medium hover:bg-primaryHover">
+             Login to pay €399.95 
+            </button>
+           </div>
+
+           <!-- Recipient -->
+            <div class="flex flex-col bg-gray-100 rounded-lg p-4 mt-6 gap-3">
+                <div class="flex">
+                    <img src="img/Wallet.svg" class="h-5 mt-0.5 pr-1" alt="">
+                    <h1 class="font-medium">Recipient</h1>
+                </div>
+                <div class="text-xs text-sm">
+                    <h1 class="font-medium">Air Baltic Corporation AS</h1>
+                    <p>LT057589874000078995785</p>
+                </div>
+                <div class="text-xs text-sm">
+                    <h1 class="font-medium">Reference</h1>
+                    <p>H2022042009243148204HCBL 71141614</p>
+                </div>
+                <div class="flex text-sm gap-2 text-gray-500">
+                    <p class="hover:text-primary cursor-pointer">Contacts</p>
+                    <span class="h-1 w-1 bg-gray-400 rounded-full mt-2"></span>
+                    <p class="hover:text-primary cursor-pointer">Help</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>

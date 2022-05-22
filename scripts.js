@@ -2,9 +2,11 @@ let ul = document.querySelector("ul");
 let listItems = ul.getElementsByTagName("li");
 let form = document.getElementById("form");
 let loginMethods = document.getElementById("loginMethods");
+let otherMethods = document.getElementById("otherMethods");
 let recipient = document.getElementById("recipient");
 let heroCont = document.getElementById("heroCont");
 let otherInfo = document.getElementById("otherInfo");
+let smartIdCode = document.getElementById("smartIdCode");
 
 
 const userId = document.getElementById('userId');
@@ -60,9 +62,8 @@ form.addEventListener('submit', function (e) {
         console.log(`Method: ${selectedMethod}`);
         console.log(`User ID: ${userId.value}`);
         console.log(`Personal code: ${personalCode.value}`);
-    } else {
-        console.log('there was an error');
-    }
+        launchSmartId();
+    } 
 });
 
 function checkInputs() {
@@ -89,4 +90,12 @@ function setErrorFor(input, message) {
     small.style.display = 'block';
     small.innerText = message;
     input.classList.replace('border-gray-300','border-red-500');
+}
+
+// Smart-ID
+
+function launchSmartId() {
+    loginMethods.style.display = 'none';
+    form.style.display = 'none';
+    smartIdCode.style.display = 'block';
 }

@@ -523,12 +523,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0px;
 }
 
-.mt-6{
-  margin-top: 1.5rem;
-}
-
 .mt-2{
   margin-top: 0.5rem;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .block{
@@ -549,6 +549,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-6{
   height: 1.5rem;
+}
+
+.h-3{
+  height: 0.75rem;
 }
 
 .h-1{
@@ -608,16 +612,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 1.5rem;
 }
 
-.rounded-lg{
-  border-radius: 0.5rem;
-}
-
 .rounded-full{
   border-radius: 9999px;
 }
 
+.rounded-lg{
+  border-radius: 0.5rem;
+}
+
 .border{
   border-width: 1px;
+}
+
+.border-gray-200{
+  --tw-border-opacity: 1;
+  border-color: rgb(237 237 238 / var(--tw-border-opacity));
 }
 
 .border-gray-300{
@@ -659,6 +668,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1.5rem;
 }
 
+.p-10{
+  padding: 2.5rem;
+}
+
 .p-4{
   padding: 1rem;
 }
@@ -671,6 +684,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .px-4{
@@ -723,6 +746,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1rem;
 }
 
+.pt-6{
+  padding-top: 1.5rem;
+}
+
+.pt-3{
+  padding-top: 0.75rem;
+}
+
 .pr-1{
   padding-right: 0.25rem;
 }
@@ -746,6 +777,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
@@ -762,6 +798,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-500{
   --tw-text-opacity: 1;
   color: rgb(98 98 112 / var(--tw-text-opacity));
+}
+
+.text-primary{
+  --tw-text-opacity: 1;
+  color: rgb(0 148 255 / var(--tw-text-opacity));
 }
 
 .text-red-500{
@@ -794,6 +835,11 @@ body {
 
 .hover\:cursor-auto:hover{
   cursor: auto;
+}
+
+.hover\:border-primaryHover:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 142 245 / var(--tw-border-opacity));
 }
 
 .hover\:bg-primaryHover:hover{

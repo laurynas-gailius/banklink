@@ -7,7 +7,8 @@ let recipient = document.getElementById("recipient");
 let heroCont = document.getElementById("heroCont");
 let otherInfo = document.getElementById("otherInfo");
 let smartIdCode = document.getElementById("smartIdCode");
-
+let contactInfo = document.getElementById("contactInfo");
+let showContacts = document.getElementById("showContacts");
 
 const userId = document.getElementById('userId');
 const personalCode = document.getElementById('personalCode');
@@ -91,6 +92,12 @@ function setErrorFor(input, message) {
     small.innerText = message;
     input.classList.replace('border-gray-300','border-red-500');
 }
+
+// Contacts 
+showContacts.addEventListener("click", function (e) {
+    contactInfo.style.display = 'block';
+    showContacts.style.display = 'none';
+})
 
 // Smart-ID
 

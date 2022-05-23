@@ -5,11 +5,13 @@
 @tailwind utilities;
 
 
-body {
+@media only screen and (min-width: 480px) {
+  body {
     background-image: url('../img/bg-desktop.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; 
+  }
 }
 
 @layer utilities {
@@ -19,3 +21,4 @@ body {
       margin: 0;
     }
   }
+

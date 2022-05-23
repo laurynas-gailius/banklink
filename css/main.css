@@ -502,6 +502,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: absolute;
 }
 
+.relative{
+  position: relative;
+}
+
 .left-2\/4{
   left: 50%;
 }
@@ -602,6 +606,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-2{
   gap: 0.5rem;
+}
+
+.overflow-x-hidden{
+  overflow-x: hidden;
 }
 
 .rounded-3xl{

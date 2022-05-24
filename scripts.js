@@ -16,6 +16,11 @@ const personalCode = document.getElementById('personalCode');
 const selectedItem = ["selected", "text-black", "font-medium", "text-sm", "bg-gray-200", "py-1.5", "rounded-full", "px-3.5", "hover:cursor-auto"];
 const defaultItem = ["text-gray-500", "font-medium", "text-sm", "bg-white", "py-1.5", "px-3.5", "rounded-full", "hover:text-black", "cursor-pointer"];
 
+const selectedRadio = ["selected", "flex", "justify-center", "h-5", "w-5", "rounded-full", "bg-primary"];
+const defaultRadio = ["flex", "justify-center", "h-5", "w-5", "rounded-full", "bg-white", "border", "border-gray-300"];
+
+// Login method
+
 function loginMethodStyles() {
     for (let i = 0; i < listItems.length; i++) {
         if (listItems[i].classList.contains('selected')) {

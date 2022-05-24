@@ -9,11 +9,11 @@
     <title>Pay via Bank</title>
 </head>
 
-<body class="overflow-x-hidden relative font-manrop" onload="loginMethodStyles()">
+<body class="overflow-hidden font-manrop" onload="loginMethodStyles()">
     <!-- Navbar -->
     <nav>
         <!-- Flex container -->
-        <div class="flex items-center justify-between sm:max-w-screen-xl mx-auto px-4 pt-5 sm:p-6 bg-white">
+        <div class="flex items-center justify-between mx-auto px-4 py-5 sm:p-6 bg-white">
             <!-- Exit -->
             <a class="font-semibold text-base hover:text-primary" href="#">Cancel</a>
             <!-- Logo -->
@@ -21,12 +21,12 @@
             <!-- Change language -->
             <img src="img/flag.svg" class="h-6" alt="">
         </div>
-        <div class="mt-5 h-px w-full bg-gray-200 sm:hidden"></div>
+        <div class="sm:mt-5 h-px w-full bg-gray-200 sm:hidden"></div>
     </nav>
     <!-- Content -->
     <section id="hero">
         <div id="heroCont"
-            class="flex flex-col absolute sm:mt-20 left-2/4 translate-x-[-50%]  w-100 px-5 py-5  sm:bg-white rounded-3xl">
+            class="flex flex-col absolute sm:mt-20 left-2/4 translate-x-[-50%] w-100 px-5 py-5  sm:bg-white rounded-3xl">
 
             <!-- Header -->
             <div class="flex flex-row justify-between">
@@ -35,6 +35,32 @@
                     <H1 id="demo" class="text-lg font-medium">Login to pay</H1>
                 </div>
                 <img src="img/SEB.svg" class="h-6" alt="">
+            </div>
+
+            <!-- Accounts -->
+            <div id="accounts" class="flex flex-col gap-2 hidden">
+                <div class="flex flex-row border rounded-lg py-2 border-gray-300">
+                    <div class="px-3 my-auto">
+                        <div class="selected flex justify-center h-5 w-5 rounded-full bg-primary">
+                            <div class="h-2 w-2 m-auto rounded-full bg-white"></div>
+                        </div>
+                    </div>
+                        <div>
+                            <h1 class="text-sm font-medium">Account 1</h1>
+                            <p class="text-sm">LT057589874000078995785</p>
+                        </div>
+                </div>
+                <div class="flex flex-row border rounded-lg py-2 cursor-pointer border-gray-300 hover:bg-gray-100">
+                    <div class="px-3 my-auto">
+                        <div class="flex justify-center h-5 w-5 rounded-full bg-white border border-gray-300">
+                        
+                        </div>
+                    </div>
+                        <div>
+                            <h1 class="text-sm font-medium">Account 2</h1>
+                            <p class="text-sm">LT057589874000078995785</p>
+                        </div>
+                </div>
             </div>
 
             <!-- Login methods -->

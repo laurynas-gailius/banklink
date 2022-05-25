@@ -9,7 +9,7 @@
     <title>Pay via Bank</title>
 </head>
 
-<body class="overflow-hidden font-manrop" onload="loginMethodStyles()">
+<body class="overflow-x-hidden font-manrop" onload="loginMethodStyles()">
     <!-- Navbar -->
     <nav>
         <!-- Flex container -->
@@ -29,39 +29,93 @@
             class="flex flex-col absolute sm:mt-20 left-2/4 translate-x-[-50%] w-100 px-5 py-5  sm:bg-white rounded-3xl">
 
             <!-- Header -->
-            <div class="flex flex-row justify-between">
+            <div id="contentHeader" class="flex flex-row justify-between">
                 <div class="flex flex-row">
-                    <img src="img/lock_icon.svg" class="h-5 mt-0.5 pr-2" alt="">
-                    <H1 id="demo" class="text-lg font-medium">Login to pay</H1>
+                    <img id="titleIcon" src="img/lock_icon.svg" class="h-5 mt-0.5 pr-2" alt="">
+                    <H1 id="actionTitle" class="text-lg font-medium">Login to pay</H1>
                 </div>
                 <img src="img/SEB.svg" class="h-6" alt="">
             </div>
 
-            <!-- Accounts -->
-            <div id="accounts" class="flex flex-col gap-2 hidden">
-                <div class="flex flex-row border rounded-lg py-2 border-gray-300">
-                    <div class="px-3 my-auto">
-                        <div class="selected flex justify-center h-5 w-5 rounded-full bg-primary">
-                            <div class="h-2 w-2 m-auto rounded-full bg-white"></div>
+            <!-- Account form -->
+            <form id="accForm" class="hidden">
+
+                <!-- Account list -->
+                <div id="accounts" class="mt-6">
+                    <div class="flex flex-col gap-2">
+
+                        <!-- Account 1 -->
+                        <div class="flex flex-row border rounded-lg py-2 border-gray-300">
+                            <div class="px-3 my-auto">
+                                <div class="selected flex justify-center h-5 w-5 rounded-full bg-primary">
+                                    <div class="h-2 w-2 m-auto rounded-full bg-white"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <h1 class="text-sm font-medium">Account 1</h1>
+                                <p class="text-sm">LT057589874000078995785</p>
+                            </div>
+                        </div>
+
+                        <!-- Account 2 -->
+                        <div
+                            class="flex flex-row border rounded-lg py-2 cursor-pointer border-gray-300 hover:bg-gray-100">
+                            <div class="px-3 my-auto">
+                                <div class="flex justify-center h-5 w-5 rounded-full bg-white border border-gray-300">
+                                </div>
+                            </div>
+                            <div>
+                                <h1 class="text-sm font-medium">Account 2</h1>
+                                <p class="text-sm">LT057589874000078995785</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Account saving -->
+                <div id="accountSaving" class="pt-5">
+                    <div class="flex gap-3">
+                        <label class="flex items-center cursor-pointer">
+                            <!-- toggle -->
+                            <div class="relative">
+                                <!-- input -->
+                                <input onclick="validate()" id="accSwitch" type="checkbox" class="sr-only">
+                                <!-- line -->
+                                <div class="line block bg-gray-300 w-12 h-7 rounded-full"></div>
+                                <!-- dot -->
+                                <div class="dot absolute left-1 top-1 bg-white w-5 h-5 rounded-full transition"></div>
+                            </div>
+                        </label>
+                        <div>
+                            <h1 class="text-sm font-medium">Pay with one click next time</h1>
+                            <p class="text-sm text-gray-500">Across 500+ Klix supported stores</p>
                         </div>
                     </div>
-                        <div>
-                            <h1 class="text-sm font-medium">Account 1</h1>
-                            <p class="text-sm">LT057589874000078995785</p>
-                        </div>
-                </div>
-                <div class="flex flex-row border rounded-lg py-2 cursor-pointer border-gray-300 hover:bg-gray-100">
-                    <div class="px-3 my-auto">
-                        <div class="flex justify-center h-5 w-5 rounded-full bg-white border border-gray-300">
-                        
+                    <!-- Phone input -->
+                    <div id="phoneInput" class="hidden">
+                        <div class="flex flex-col pt-2">
+                            <input type="number" id="userPhone"
+                                class="required border-gray-300 border rounded-lg px-4 py-4 focus:outline-none focus:border-primary"
+                                placeholder="Phone number">
+                            <!-- Error message -->
+                            <small class="text-red-500 hidden"></small>
+                            <!-- Terms -->
+                            <p class="text-gray-500 text-xs mt-2">I agree to provide my data to Klix according to <span
+                                    class="underline decoration-1 hover:text-primary cursor-pointer">Terms of
+                                    Use.</span></p>
                         </div>
                     </div>
-                        <div>
-                            <h1 class="text-sm font-medium">Account 2</h1>
-                            <p class="text-sm">LT057589874000078995785</p>
-                        </div>
+                    <!-- Form button -->
+                    <div class="flex flex-col">
+                        <button type="submit"
+                            class="text-white rounded-full mt-4 bg-primary py-4 font-medium hover:bg-primaryHover">
+                            Confirm to pay €399.95
+                        </button>
+                    </div>
                 </div>
-            </div>
+
+            </form>
 
             <!-- Login methods -->
             <div id="loginMethods">
@@ -75,7 +129,9 @@
             <div id="otherInfo" class="hidden">
                 <div class="flex flex-col text-gray-500 text-sm text-center">
                     <p>You will be redirected to the internet bank to use other available bank login methods.</p>
-                    <button onclick="window.location.href='https://ibanka.seb.lv/web/ipank.p?lang=LAT';" class="text-primary border py-4 px-6 mt-2 font-medium border-gray-200 rounded-full hover:border-primaryHover">Go to bank</button>
+                    <button onclick="window.location.href='https://ibanka.seb.lv/web/ipank.p?lang=LAT';"
+                        class="text-primary border py-4 px-6 mt-2 font-medium border-gray-200 rounded-full hover:border-primaryHover">Go
+                        to bank</button>
                 </div>
             </div>
 
@@ -97,7 +153,9 @@
 
                 <!-- Button -->
                 <div class="flex flex-col">
-                    <p class="text-gray-500 text-xs text-center mt-5">By proceeding you consent to <span class="underline decoration-1 hover:text-primary cursor-pointer">Terms of Use</span> and providing your account number to Klix for payment initiation.</p>
+                    <p class="text-gray-500 text-xs text-center mt-5">By proceeding you consent to <span
+                            class="underline decoration-1 hover:text-primary cursor-pointer">Terms of Use</span> and
+                        providing your account number to Klix for payment initiation.</p>
                     <button type="submit"
                         class="text-white rounded-full mt-4 bg-primary py-4 font-medium hover:bg-primaryHover">
                         Login to pay €399.95
@@ -135,21 +193,34 @@
                     <div class="flex flex-col gap-3">
                         <div class="h-px w-full bg-gray-200"></div>
                         <div class="text-xs text-sm">
-                                <h1 class="font-medium">Email</h1>
-                                <p>help@airbaltic.lv</p>
+                            <h1 class="font-medium">Email</h1>
+                            <p>help@airbaltic.lv</p>
                         </div>
                         <div class="text-xs text-sm">
-                             <h1 class="font-medium">Phone number</h1>
+                            <h1 class="font-medium">Phone number</h1>
                             <p>+371 6700 6006</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Success message -->
+            <div id="successCont" class="mt-8 hidden">
+                <img src="img/success-icon.svg" class="h-10 m-auto" alt="">
+                <div class="flex flex-col text-center mt-6">
+                    <h1 class="font-medium text-lg">Payment successful!</h1>
+                    <p class="text-sm text-gray-500">Your payment has been received.</p>
+                    <button onclick="window.location.href='https://www.airbaltic.com/lv-LT/index';" type="submit"
+                            class="text-white rounded-full mt-8 bg-primary py-4 font-medium hover:bg-primaryHover">
+                            Return to merchant in <span id="time">3</span>...
+                    </button>
+                </div>
+            </div>
+
             <!-- Klix mark-->
-            <div class="flex text-center mx-auto mt-4">
-                    <p class="text-gray-500 text-xs pt-1 pr-1.5">Powered by</p>
-                    <img src="img/klix-logo.svg" class="h-6" alt="">
+            <div id="klixMark" class="flex text-center mx-auto mt-4">
+                <p class="text-gray-500 text-xs pt-1 pr-1.5">Powered by</p>
+                <img src="img/klix-logo.svg" class="h-6" alt="">
             </div>
 
         </div>

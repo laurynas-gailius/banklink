@@ -22,3 +22,12 @@
     }
   }
 
+  input:checked ~ .dot {
+    transform: translateX(100%);
+  }
+
+  input:checked ~ .line {
+    background-color: #0094FF;
+  }
+ 
+

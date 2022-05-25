@@ -9,9 +9,19 @@ let otherInfo = document.getElementById("otherInfo");
 let smartIdCode = document.getElementById("smartIdCode");
 let contactInfo = document.getElementById("contactInfo");
 let showContacts = document.getElementById("showContacts");
+let accounts = document.getElementById("accounts");
+let accountSaving = document.getElementById("accountSaving");
+let actionTitle = document.getElementById("actionTitle");
+let accSwitch = document.getElementById("accSwitch");
+let accForm = document.getElementById('accForm');
+let successCont = document.getElementById('successCont');
+let klixMark = document.getElementById('klixMark');
+let contentHeader = document.getElementById('contentHeader');
+
 
 const userId = document.getElementById('userId');
 const personalCode = document.getElementById('personalCode');
+const userPhone = document.getElementById("userPhone");
 
 const selectedItem = ["selected", "text-black", "font-medium", "text-sm", "bg-gray-200", "py-1.5", "rounded-full", "px-3.5", "hover:cursor-auto"];
 const defaultItem = ["text-gray-500", "font-medium", "text-sm", "bg-white", "py-1.5", "px-3.5", "rounded-full", "hover:text-black", "cursor-pointer"];
@@ -33,7 +43,7 @@ function loginMethodStyles() {
 
 let selectedMethod = 'smartId';
 
-ul.addEventListener("click", function (e) {
+loginMethods.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
         for (let i = 0; i < listItems.length; i++) {
             listItems[i].className = '';
@@ -51,7 +61,7 @@ ul.addEventListener("click", function (e) {
     }
 });
 
-ul.addEventListener("click", function (e) {
+loginMethods.addEventListener("click", function (e) {
     if (e.target === document.getElementById("otherMethods")) {
         otherInfo.style.display = 'block';
         form.style.display = 'none';
@@ -69,6 +79,9 @@ form.addEventListener('submit', function (e) {
         console.log(`User ID: ${userId.value}`);
         console.log(`Personal code: ${personalCode.value}`);
         launchSmartId();
+        setTimeout(function() {
+            showAccounts();
+        }, 3500);
     } 
 });
 
@@ -109,5 +122,75 @@ showContacts.addEventListener("click", function (e) {
 function launchSmartId() {
     loginMethods.style.display = 'none';
     form.style.display = 'none';
+    accForm.style.display = 'none';
     smartIdCode.style.display = 'block';
 }
+
+// Accounts
+function showAccounts(){
+    accForm.style.display = 'block';
+    smartIdCode.style.display = 'none';
+    actionTitle.textContent = "Payer";
+    document.getElementById("titleIcon").src="img/person-icon.svg";
+};
+
+function validate() {
+    if (accSwitch.checked) {
+      phoneInput.style.display = 'block';
+      accFormStatus = false;
+    } else {
+        phoneInput.style.display = 'none';
+    }
+  };
+
+  let accFormStatus = true;
+
+  function checkAccFormInputs() {
+
+    const userPhoneValue = userPhone.value.trim();
+
+    if (accSwitch.checked) {
+        accFormStatus = false;
+        if (userPhoneValue === '') {
+            setErrorFor(userPhone, 'Phone number cannot be blank');
+        } else {
+            accFormStatus = true;
+            console.log('it worked!') 
+        }
+    }  
+}
+
+
+  accForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    checkAccFormInputs();
+    if (accFormStatus === true) {
+        launchSmartId();
+        setTimeout(function() {
+            showSuccess();
+        }, 3500);
+    }
+});
+
+function showSuccess() {
+    smartIdCode.style.display = 'none';
+    recipient.style.display = 'none';
+    successCont.style.display = 'block';
+    klixMark.style.display = 'none';
+    contentHeader.style.display = 'none';
+    // Time
+    const timeH = document.getElementById('time')
+    let timeSecond = 3;
+
+    timeH.innerHTML = timeSecond;
+
+    const countDown = setInterval (() => {
+        timeSecond--;
+        timeH.innerHTML = timeSecond;
+    },1000) 
+
+    setTimeout(function() {
+        window.location.replace("https://www.airbaltic.com/lv-LT/index");
+    }, 3000);
+}
+

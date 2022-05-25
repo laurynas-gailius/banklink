@@ -18,7 +18,6 @@ let successCont = document.getElementById('successCont');
 let klixMark = document.getElementById('klixMark');
 let contentHeader = document.getElementById('contentHeader');
 
-
 const userId = document.getElementById('userId');
 const personalCode = document.getElementById('personalCode');
 const userPhone = document.getElementById("userPhone");
@@ -150,8 +149,8 @@ function validate() {
     const userPhoneValue = userPhone.value.trim();
 
     if (accSwitch.checked) {
-        accFormStatus = false;
         if (userPhoneValue === '') {
+            accFormStatus = false;
             setErrorFor(userPhone, 'Phone number cannot be blank');
         } else {
             accFormStatus = true;

@@ -139,6 +139,7 @@ function validate() {
       accFormStatus = false;
     } else {
         phoneInput.style.display = 'none';
+        accFormStatus = true;
     }
   };
 
